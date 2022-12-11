@@ -106,7 +106,7 @@ volumes:
   bastion:
 ```
 
-_* When you are run `Bastion` container first time it generates `dsa`, `ecdsa`, `ed25519` and `rsa` key pair and saves them in permanent volume `bastion`, When you need to regenerate key pair, you should remove volume `bastion`._
+_* When you are run `Bastion` container first time it generates `ecdsa`, `ed25519` and `rsa` key pair and saves them in permanent volume `bastion`, When you need to regenerate key pair, you should remove volume `bastion`._
 
 ### 1. Connect to  `Bastion`
 
