@@ -67,6 +67,7 @@ else
 fi
 
 /usr/sbin/sshd -D -e -4 \
+    -o "LogLevel=$SSH_LOG_LEVEL" \
     -o "HostKey=$HOST_KEYS_PATH/ssh_host_rsa_key" \
     -o "HostKey=$HOST_KEYS_PATH/ssh_host_ecdsa_key" \
     -o "HostKey=$HOST_KEYS_PATH/ssh_host_ed25519_key" \
@@ -74,7 +75,6 @@ fi
     -o "PermitEmptyPasswords=no" \
     -o "PermitRootLogin=no" \
     $CONFIG_PUBKEY_AUTHENTICATION \
-    $CONFIG_AUTHORIZED_KEYS \
     $CONFIG_GATEWAY_PORTS \
     $CONFIG_PERMIT_TUNNEL \
     $CONFIG_X11_FORWARDING \
