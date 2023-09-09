@@ -66,6 +66,11 @@ else
     CONFIG_LISTEN_PORT="-o Port=22"
 fi
 
+ssh-keyscan -t ed25519 -p "$GIT_SSH_PORT" "$GIT_SSH_HOST" > "${GITHOME}/.ssh/known_hosts"
+chmod git:git "${GITHOME}/.ssh/known_hosts"
+sed -i "s/GIT_SSH_HOST/${GIT_SSH_HOST}/g" ${GITBIN}
+sed -i "s/GIT_SSH_PORT/${GIT_SSH_PORT}/g" ${GITBIN}
+
 /usr/sbin/sshd -D -e -4 \
     -o "LogLevel=$SSH_LOG_LEVEL" \
     -o "HostKey=$HOST_KEYS_PATH/ssh_host_rsa_key" \
