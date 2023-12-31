@@ -1,5 +1,6 @@
 # Bastion — jump host (gate) based on OpenSSH Server (sshd)
 
+
 > A [bastion host](https://en.wikipedia.org/wiki/Bastion_host) is a
 special purpose computer on a network specifically designed and
 configured to withstand attacks. The computer generallyhosts a single
@@ -10,6 +11,11 @@ either on the outside of a firewall or in a demilitarized zone (`DMZ`)
 and usually involves access from untrusted networks orcomputers. 
 
 ---
+
+## Fork notes
+This is a somewhat modified fork, YMMV.
+
+--- 
 
 ![AWS Bastion](docs/bastion_host.png)
 
