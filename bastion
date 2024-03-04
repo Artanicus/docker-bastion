@@ -67,7 +67,7 @@ else
 fi
 
 ssh-keyscan -t ed25519 -p "$GIT_SSH_PORT" "$GIT_SSH_HOST" > "${GITHOME}/.ssh/known_hosts"
-chmod git:git "${GITHOME}/.ssh/known_hosts"
+chown git:git "${GITHOME}/.ssh/known_hosts"
 sed -i "s/GIT_SSH_HOST/${GIT_SSH_HOST}/g" ${GITBIN}
 sed -i "s/GIT_SSH_PORT/${GIT_SSH_PORT}/g" ${GITBIN}
 
